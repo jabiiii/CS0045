@@ -1,4 +1,5 @@
 #define GLEW_STATIC
+
 #include <GL/glew.h>
 #include <GL/glut.h>
 #include <iostream>
@@ -20,7 +21,7 @@ GLfloat polygonvertices[] = {
 int main(int argc, char** argv){
 glutInit(&argc, argv);
 glutInitWindowSize(800, 600);
-glutCreateWindow("simple");
+glutCreateWindow("ASYNC3-14-22");
 glutDisplayFunc(display);
 GLenum err = glewInit();
 if(err == GLEW_OK){
@@ -40,6 +41,20 @@ glDisableClientState(GL_VERTEX_ARRAY);
 // bind with 0, so, switch back to normal pointer operation
 glBindBuffer(GL_ARRAY_BUFFER, 0);
 glDeleteBuffers(1, &VBOid);
+}
+
+void translate(float x,float y,float z,int startindex){
+		GLfloat w = 1.0f;
+	//Translation Matrix Template
+	GLfloat ta[] = {
+				1.0f, 0.0, 0.0f, x,
+				0.0f,1.0, 0.0, y,
+				0.0f, 0.0f, 1.0f, z,
+				0.0f, 0.0f, 0.0f, 1
+	};
+	
+	GLfloat tx, ty, tz;
+
 }
 void display(){
 glClear(GL_COLOR_BUFFER_BIT);

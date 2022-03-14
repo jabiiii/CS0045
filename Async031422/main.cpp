@@ -4,14 +4,19 @@
 #include <iostream>
 using namespace std;
 void display();
+
+//Change Size - Christian Jeremiah A. Habana
 GLfloat polygonvertices[] = {
--0.5f,0.5f,0.0f, //first vertex
-0.5f,0.5f,0.0f, //second vertex
+	
+-0.75f,0.75f,0.0f, //first vertex
+0.75f,0.75f,0.0f, //second vertex
 1.0f,0.0f,0.0f, //third vertex
-0.5f,-0.5f,0.0f, //fourth vertex
--0.5f,-0.5f,0.0f, //fifth vertex
+0.75f,-0.75f,0.0f, //fourth vertex
+-0.75f,-0.75f,0.0f, //fifth vertex
 -1.0f,0.0f,0.0f //sixth vertex
+
 };
+
 int main(int argc, char** argv){
 glutInit(&argc, argv);
 glutInitWindowSize(800, 600);
@@ -22,6 +27,7 @@ if(err == GLEW_OK){
 glutMainLoop();
 }
 }
+
 void polygon(){
 GLuint VBOid;
 glGenBuffers(1, &VBOid);

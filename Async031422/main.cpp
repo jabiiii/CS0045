@@ -43,6 +43,7 @@ glBindBuffer(GL_ARRAY_BUFFER, 0);
 glDeleteBuffers(1, &VBOid);
 }
 
+//Direction - Dayos&Evangelista
 void translate(float x,float y,float z,int startindex){
 		GLfloat w = 1.0f;
 	//Translation Matrix Template
@@ -54,6 +55,14 @@ void translate(float x,float y,float z,int startindex){
 	};
 	
 	GLfloat tx, ty, tz;
+	
+	tx = (ta[0]*mapV[startindex]) + (ta[1]*mapV[startindex+1]) + (ta[2]*mapV[startindex+2]) + (ta[3]* w);
+	ty = (ta[4]*mapV[startindex]) + (ta[5]*mapV[startindex+1]) + (ta[6]*mapV[startindex+2]) + (ta[7]* w);
+	tz = (ta[8]*mapV[startindex]) + (ta[9]*mapV[startindex+1]) + (ta[10]*mapV[startindex+2]) + (ta[11]* w);
+	
+	mapV[startindex] = tx;
+	mapV[startindex+1] = ty;
+	mapV[startindes+2] = tz;
 
 }
 void display(){
